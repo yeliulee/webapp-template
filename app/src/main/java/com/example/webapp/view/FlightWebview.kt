@@ -91,7 +91,7 @@ class FlightWebView : AdvancedWebView {
             }
         }
 
-        override fun onPageStarted(view: WebView, url: String, favicon: Bitmap) {
+        override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
             super.onPageStarted(view, url, favicon)
         }
 

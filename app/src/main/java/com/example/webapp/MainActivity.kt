@@ -200,7 +200,7 @@ class MainActivity : AppCompatActivity(), AdvancedWebView.Listener {
         super.onBackPressed()
     }
 
-    override fun onPageStarted(url: String, favicon: Bitmap) {}
+    override fun onPageStarted(url: String, favicon: Bitmap?) {}
     override fun onPageFinished(url: String) {}
     override fun onPageError(errorCode: Int, description: String, failingUrl: String) {}
     override fun onDownloadRequested(
