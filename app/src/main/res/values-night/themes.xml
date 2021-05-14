@@ -1,0 +1,16 @@
+<resources>
+
+    <style name="Theme.WebApp" parent="Theme.AppCompat.DayNight">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="popupTheme">@android:style/ThemeOverlay.Material.Light</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="iconTint">@color/white</item>
+        <item name="background">?colorPrimary</item>
+    </style>
+
+</resources>
