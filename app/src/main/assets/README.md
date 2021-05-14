@@ -15,8 +15,8 @@
     "colorPrimary": "#79BD9A" // 主题色
   },
   "appbar": {
-    "title": "测试百度", // 顶栏标题（不展示网页标题则展示这个）
-    "showWebTitle": true, // 是否展示网页菜单
+    "title": "测试百度", // 顶栏标题
+    "showWebTitle": true, // 是否展示网页标题，在顶栏标题下的副标题位置
     "menuEnable": false, // 是否开启菜单
     "enable": false // 是否开启顶栏
   }
