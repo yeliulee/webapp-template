@@ -59,18 +59,21 @@ class FlightWebView : AdvancedWebView {
         }
 
         private fun lookup(context: Context, url: String): Boolean {
-            if (!openAppEnable) return false
             try {
-                val packageManager = context.packageManager
-                val intent: Intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME)
-                val info = packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)
-                // 跳到该应用
-                if (info != null) {
-                    context.startActivity(intent)
-                    return true
+                if (openAppEnable) {
+                    val packageManager = context.packageManager
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    val info = packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)
+                    // 跳到该应用
+                    if (info != null) {
+                        context.startActivity(intent)
+                    } else {
+                        // 可打开 data uri 和 blob
+                        if (url.startsWith("data:") || url.startsWith("blob:")) return false
+                    }
                 }
-            } catch (ignore: Throwable) {
-            }
+                return true
+            } catch (ignore: Throwable) { }
             return false
         }
 
